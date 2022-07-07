@@ -8,16 +8,21 @@
 
 <body>
     <form id="name" action="">
-        <input id='change' autocomplete="off"/><button>Trocar</button>
+        <input id='change' autocomplete="off" /><button>Trocar</button>
     </form>
-    <div id="on">Users online: <span id="online"></span></div>
+    <div id="on" onclick="dropdown()" class="dropdown">Users online: <span class='dropdown-content' id="online"></span></div>
     <ul id="messages"></ul>
     <form id="form" action="">
         <input id="input" autocomplete="off" /><button>Send</button>
     </form>
-    <div id="type"></div>
+    <div id="type"><span></span></div>
     <script src="/socket.io/socket.io.js"></script>
     <script src="/js/socket.js"></script>
+    <script>
+        function dropdown() {
+            document.getElementById("on").classList.toggle("show");
+        }
+    </script>
 </body>
 
 </html>
